@@ -9,8 +9,8 @@ import listings_uploader_bot as lsb
 import os, csv
 from datetime import datetime
 
-user = 'needboat75@gmail.com'
-password = 'NDBOAT100summit'
+user = '' # username
+password = '' # password
 
 start_time = datetime.now().time()
 print("Starting time: {}h :{}m :{}s".format(start_time.hour,start_time.minute,start_time.second))
