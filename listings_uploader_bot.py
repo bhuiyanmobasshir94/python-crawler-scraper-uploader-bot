@@ -4,12 +4,12 @@
 from time import sleep
 from random import randint
 import selenium
-from pyvirtualdisplay import Display
+#from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver import DesiredCapabilities
-from selenium.webdriver.common.proxy import Proxy, ProxyType
+#from selenium.webdriver.chrome.options import Options
+#from selenium.webdriver import DesiredCapabilities
+#from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -27,7 +27,6 @@ class ListingUploader():
 	def start_driver(self):
 		try:
 			print('starting driver...')
-			#self.display = Display(visible=1, size=(320, 240)).start()
 			self.driver = webdriver.Chrome(r"C:\chromedriver.exe")
 			self.driver.maximize_window()
 			sleep(1)
@@ -58,8 +57,8 @@ class ListingUploader():
 		print('logging in to the wp-admin...')
 		try:
 			form = self.driver.find_element_by_xpath('//*[@id="loginform"]')
-			form.find_element_by_xpath('.//*[@id="user_login"]').send_keys('charter_admin')
-			form.find_element_by_xpath('.//*[@id="user_pass"]').send_keys('Needboat_admin18')
+			form.find_element_by_xpath('.//*[@id="user_login"]').send_keys() # username credentials
+			form.find_element_by_xpath('.//*[@id="user_pass"]').send_keys() # password credentials
 			form.find_element_by_xpath('.//*[@id="wp-submit"]').click()
 			sleep(2)
 		except Exception as e:
